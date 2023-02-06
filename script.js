@@ -1,4 +1,4 @@
-import "./normalize.css/normalize.css";
+import "normalize.css";
 import "./style.css";
 import clear from "./assets/clear.png";
 import rain from "./assets/rain.png";
