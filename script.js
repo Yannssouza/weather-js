@@ -1,5 +1,10 @@
 import "./normalize.css/normalize.css";
 import "./style.css";
+import clear from "./assets/clear.png";
+import rain from "./assets/rain.png";
+import snow from "./assets/snow.png";
+import cloud from "./assets/cloud.png";
+import mist from "./assets/mist.png";
 
 const container = document.querySelector(".container");
 const search = document.querySelector(".search-box button");
@@ -18,7 +23,7 @@ search.addEventListener("click", () => {
   )
     .then((response) => response.json())
     .then((json) => {
-        if (json.cod === "404") {
+      if (json.cod === "404") {
         container.style.height = "400px";
         weatherBox.style.display = "none";
         weatherDetails.style.display = "none";
@@ -40,23 +45,23 @@ search.addEventListener("click", () => {
 
       switch (json.weather[0].main) {
         case "Clear":
-          image.src = "./images/clear.png";
+          image.src = clear;
           break;
 
         case "Rain":
-          image.src = "./images/rain.png";
+          image.src = rain;
           break;
 
         case "Snow":
-          image.src = "./images/snow.png";
+          image.src = snow;
           break;
 
         case "Clouds":
-          image.src = "./images/cloud.png";
+          image.src = cloud;
           break;
 
         case "Haze":
-          image.src = "./images/mist.png";
+          image.src = mist;
           break;
 
         default:
